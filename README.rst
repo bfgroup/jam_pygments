@@ -6,7 +6,7 @@ A Jam/B2 build description language lexer for Pygments.
 Install
 --------
 
-  $ pip install jam_pygments
+  $ pip install https://github.com/bfgroup/jam_pygments/archive/master.zip
 
 Usage
 -------
