@@ -74,9 +74,10 @@ class JamLexer(RegexLexer):
 
         # Value
         '^value': [
-            (r'(?=[^\s])', Text, ('#pop', '@value'))
+            (r'(?=[^\s])', Text, '@value')
             ],
         '@value': [
+            (r'(?=\s)', Whitespace, '#pop'),
             include('^variable_exp'),
             (r'(?=<)', Text, '@value_grist'),
             (r'[^\s]', Text)
@@ -112,7 +113,7 @@ class JamLexer(RegexLexer):
         '@rule_args': [
             include('^whitespace'),
             include('^comment'),
-            (r'[(]', Punctuation),
+            (r'[(:*+?]', Punctuation),
             (r'([^\s:*+?)]+)', Name.Variable),
             (r'[)]', Punctuation, '#pop')
         ],
