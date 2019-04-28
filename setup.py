@@ -1,4 +1,4 @@
-# Copyright 2018 Rene Rivera
+# Copyright 2018-2019 Rene Rivera
 # Distributed under the Boost Software License, Version 1.0.
 # (See accompanying file LICENSE.txt or http://www.boost.org/LICENSE_1_0.txt)
 
@@ -7,14 +7,14 @@ from setuptools import setup
 setup(
     name='jam_pygments',
     description='A Jam/B2 build description language lexer for Pygments.',
-    version='0.1',
+    version='0.2',
     url='https://github.com/bfgroup/jam_pygments',
     author='Rene Rivera',
     author_email='grafikrobot@gmail.com',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: End Users/Desktop',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Boost Software License 1.0',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
@@ -23,6 +23,8 @@ setup(
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Text Processing',
         'Topic :: Utilities',
         'Environment :: Plugins',
@@ -37,6 +39,6 @@ setup(
     packages=['jam_pygments'],
 
     entry_points={
-          'pygments.lexers': ['JamLexer = jam_pygments:JamLexer' ]
-    },
+        'pygments.lexers': 'JamLexer = jam_pygments:JamLexer'
+    }
 )
